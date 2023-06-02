@@ -1,38 +1,169 @@
-.App {
-  text-align: center;
+
+
+/*
+.recipeCard{
+   width: 175px;
+   font-size: 12px;
+   flex: 0 0 auto;       
+   display: flex;          
+   flex-direction: column; 
+   position: relative;
+}
+*/
+
+nav {
+   height: 60px;
+   background-color: #b9c6e0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.6);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav--logo {
+   position: absolute;
+   left: 30px;
+   height: 45px;
+   
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul {
+   list-style: none;
+   display: flex;
+   justify-content: center;
+   margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+li {
+   margin-right: 30px;
+   font-size: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+body {
+   background-color: #ebf0f3;
+   margin: 0;
+   
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* form {
+   display: flex;
+   flex-direction: column;
+   
+} */
+
+.container--form {
+   display: flex;
+   width: 50%;
+   flex-direction: column;
+   align-items: center;
+ 
+}
+
+form {
+   display: block;
+   justify-content: center;
+   border-radius: 4px;
+   width: 40%;
+   border: black solid 1px;
+   box-shadow: 5px 5px 5px black;
+}
+
+input {
+   margin: 5px 0px 5px 0px;
+   width: 20em;
+   height: 2em;
+   border-radius: 5px;
+   text-indent: 5px;
+   border: black solid 1px;
+}
+
+label {
+   display: block;
+}
+
+.btn--recipeForm, .btn--addIngredient {
+   height: 2.3em;
+   border-radius: 5px;
+   background-color: rgb(162, 225, 240);
+   margin:10px 0 10px 0;
+
+   border: black solid 1px;
+}
+
+.btn--recipeForm, .btn--addIngredient:hover {
+   background-color: rgb(127, 181, 195);
+   transition: 200ms;
+}
+
+.btn--recipeForm, .btn--addIngredient:active {
+   background-color: rgb(76, 140, 154);
+}
+
+.btn--addIngredient{
+   margin-left: 5px;
+}
+
+.footer--pin {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 10px;
+   height: 40px;
+   background-color: #dfe4e7;
+}
+
+.footer--text {
+margin-right: 10%;
+}
+
+
+a {
+   display: block;
+   height: 30px;
+   margin-right: 20px;
+
+}
+
+.content-container{
+   height: 100vh;
+   margin-bottom: -60px;
+}
+
+
+.btn--nav {
+   height: 25px;
+   border-radius: 5px;
+   border: 1px;
+   background-color: rgb(220, 250, 240);
+   color:rgb(71, 71, 71);
+}
+
+.btn--nav:hover{
+   transition: 200ms;
+   background-color: rgba(189, 247, 228, 0.75);
+}
+
+.btn--nav:active{
+   background-color: rgb(128, 214, 187);
+}
+
+
+.container {
+   display: flex;
+   
+}
+
+.btn--addIngredient {
+
+}
+
+
+
+
+.welcomeBanner{
+
+}
+
+.about {
+   
 }
