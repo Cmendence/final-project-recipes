@@ -1,18 +1,9 @@
 import React from 'react'
 
-
 const API_URL = "https://646bb1287d3c1cae4ce42918.mockapi.io/recipes/RecipeBook"
 
+export default function RecipeForm(props) {
 
-//          addedBy:"",
-//          recipeName:"",
-//          directions:"",
-//          ingredients:[]
-//          isFavorite: false
-
-export default function RecipeForm() {
-
-   
    const [recipeData, setRecipeData] = React.useState({
       recipeName:"",
       addedBy:"",
@@ -23,27 +14,33 @@ export default function RecipeForm() {
 
    const [newIngredient, setNewIngredient] = React.useState('')
 
-   function addNewRecipe(e) {
+ async function addNewRecipe(e) {
       e.preventDefault()
       const data = recipeData
       try {
-         const resp = fetch(API_URL, {
+         const resp = await fetch(API_URL, {
             method: 'POST',
             headers: {
                'Content-Type': 'application/json'
             },
             body: JSON.stringify(data),
          })
-         console.log(resp)
-         let respdata = resp.json()
-         console.log(respdata);
+         const newRecipe = await resp.json()
+         props.updateRecipes(newRecipe)
       } catch (error){
          console.log(error);
       }
+      alert(`${data.recipeName} has been added!`)
 
+   setRecipeData({
+      recipeName:"",
+      addedBy:"",
+      directions:"",
+      ingredients:[],
+      isFavorited: false
+
+   })
    }
-
-   
 
    
    function handleChange(e) {
@@ -65,7 +62,6 @@ export default function RecipeForm() {
       console.log(updatedRecipeData)
 
    }
-
 
    return(
       <div className='container'>
@@ -93,7 +89,7 @@ export default function RecipeForm() {
          required
          />
       <label htmlFor='directions'>Directions</label>
-      <input 
+      <textarea 
          id='directions'
          type='textarea' 
          placeholder='Directions'
@@ -120,7 +116,7 @@ export default function RecipeForm() {
             <h3>Ingredients:</h3>
             {recipeData.ingredients.map(ingredient => {
               return(
-              <p key={ingredient}>{ingredient}</p>
+              <p className='ingredientCard' key={ingredient}>{ingredient}</p>
             )})}
          </div>
       </div>

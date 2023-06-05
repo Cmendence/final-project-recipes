@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-export default function RecipeCard(props) {
+export default function FavoritesCard(props) {
 
    let starIcon = props.isFavorited ? "https://www.freepnglogos.com/uploads/star-png/star-vector-png-transparent-image-pngpix-21.png" : "https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-empty-icon.png"
 
@@ -21,7 +21,6 @@ export default function RecipeCard(props) {
             {props.ingredients.map(ingredient =>(
               <p>{ingredient}</p>
             ))}
-            <button className='btn--deleteRecipe' onClick={props.deleteRecipe}>Delete Recipe</button>
 
       </div>
    )

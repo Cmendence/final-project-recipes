@@ -5,9 +5,6 @@ import RecipeCard from './RecipeCard'
 export default function Recipes(props) {
 
 
-console.log(props)
-console.log(props.recipes)
-
    //          addedBy:"",
 //          recipeName:"",
 //          directions:"",
@@ -15,11 +12,14 @@ console.log(props.recipes)
 //          isFavorite: false
 
 
+
    return(
       <section>
         {props.recipes.map(recipe =>( 
          <RecipeCard
          key={recipe.id}
+         deleteRecipe={() => props.deleteRecipe(recipe.id)}
+         toggleFavorite={() =>props.toggleFavorite(recipe.id)}
          {...recipe}
          />)
 )}

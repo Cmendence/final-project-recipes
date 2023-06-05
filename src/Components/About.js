@@ -6,8 +6,8 @@ export default function About() {
       <p className='about'>
          This is a database of our family recipes, shared from generation to generation, 
          as well as new recipes we've learned along the way. You can add your own recipe, 
-         add recipes the favorites, and delete recipes from the database(though it's not recommended!)
-
+         add recipes the favorites, and delete recipes from the database(though it's not recommended!) 
+         <br /><br />
          Feel free to give it a try!
       </p>
    )
