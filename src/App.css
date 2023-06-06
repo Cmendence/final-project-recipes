@@ -234,6 +234,104 @@ a {
    vertical-align: middle;
 }
 
-.favorites--title {
+/* Mobile devices */
+@media only screen and (max-width: 480px) {
+   nav {
+     height: 50px;
+   }
+   
+   .nav--logo {
+     left: 10px;
+     height: 30px;
+   }
+   
+   ul {
+     flex-direction: column;
+   }
+   
+   li {
+     margin-right: 0;
+     margin-bottom: 10px;
+     font-size: 16px;
+   }
+   
+   .container--form {
+     width: 80%;
+   }
+   
+   form {
+     width: 100%;
+   }
+   
+   .ingredientList {
+     width: 100%;
+   }
+   
+   input,
+   textarea {
+     width: 100%;
+   }
+   
+   .recipeCard {
+     width: 90%;
+   }
+ }
 
-}
+
+ 
+ /* Tablets and small desktops */
+ @media only screen and (min-width: 481px) and (max-width: 1024px) {
+   nav {
+     height: 50px;
+   }
+   
+   .nav--logo {
+     left: 15px;
+     height: 40px;
+   }
+   
+   li {
+     font-size: 18px;
+   }
+   
+   .container--form {
+     width: 70%;
+   }
+   
+   .ingredientList {
+     width: 70%;
+   }
+   
+   .recipeCard {
+     width: 60%;
+   }
+ }
+ 
+ /* Large desktops and beyond */
+ @media only screen and (min-width: 1025px) {
+   nav {
+     height: 60px;
+   }
+   
+   .nav--logo {
+     left: 30px;
+     height: 45px;
+   }
+   
+   li {
+     font-size: 20px;
+   }
+   
+   .container--form {
+     width: 50%;
+   }
+   
+   .ingredientList {
+     width: 80%;
+   }
+   
+   .recipeCard {
+     width: 40%;
+   }
+ }
+ 
