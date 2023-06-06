@@ -1,13 +1,12 @@
-import React from 'react'
-import WelcomeBanner from './WelcomeBanner'
-import About from './About'
+import React from "react";
+import WelcomeBanner from "./WelcomeBanner";
+import About from "./About";
 
 export default function Home() {
-   return(
-   <main>
+  return (
+    <main>
       <WelcomeBanner />
       <About />
-   
-   </main>
-   )
+    </main>
+  );
 }
