@@ -11,20 +11,9 @@ import Footer from "./Components/Footer";
 function App() {
   const [recipes, setRecipes] = React.useState([]);
 
-  // const [recipeData, setRecipeData] = React.useState({
-  //       recipeName:"",
-  //       addedBy:"",
-  //       directions:"",
-  //       ingredients:[]
-  //       isFavorite: false
 
-  // })
   const API_URL =
     "https://646bb1287d3c1cae4ce42918.mockapi.io/recipes/RecipeBook";
-
-  let starIcon = recipes.isFavorited
-    ? "https://www.freepnglogos.com/uploads/star-png/star-vector-png-transparent-image-pngpix-21.png"
-    : "https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-empty-icon.png";
 
   const getRecipes = async () => {
     try {
@@ -62,15 +51,6 @@ function App() {
     setRecipes((prevRecipes) => [...prevRecipes, newRecipe]);
   }
 
-  // function toggleFavorite(id) {
-  //    setRecipes(prevData =>
-  //        prevData.map(recipe =>
-  //          recipe.id === id ? {...recipe, isFavorited: !recipe.isFavorited } : recipe
-  //          )
-  //          )
-
-  // }
-
   function toggleFavorite(id) {
     // Retrieve the recipe with the specified ID
     const recipeToUpdate = recipes.find((recipe) => recipe.id === id);
@@ -94,14 +74,12 @@ function App() {
     fetch(`${API_URL}/${id}`, requestOptions)
       .then((response) => {
         if (response.ok) {
-          // Update the state or perform any other actions upon successful update
           setRecipes((prevData) =>
             prevData.map((recipe) =>
               recipe.id === id ? updatedRecipe : recipe
             )
           );
         } else {
-          // Handle the error if the update request fails
           console.error(
             "Failed to update the API:",
             response.status,
@@ -129,7 +107,7 @@ function App() {
                 recipes={recipes}
                 deleteRecipe={deleteRecipe}
                 toggleFavorite={toggleFavorite}
-                starIcon={starIcon}
+                
               />
             }
           />
@@ -143,7 +121,7 @@ function App() {
               <Favorites
                 recipes={recipes}
                 toggleFavorite={toggleFavorite}
-                starIcon={starIcon}
+                
               />
             }
           />

@@ -4,6 +4,7 @@ import RecipeCard from "./RecipeCard";
 export default function Recipes(props) {
 
   return (
+   <div className="container--recipes">
     <section>
       {props.recipes.map((recipe) => (
         <RecipeCard
@@ -14,5 +15,6 @@ export default function Recipes(props) {
         />
       ))}
     </section>
+    </div>
   );
 }
