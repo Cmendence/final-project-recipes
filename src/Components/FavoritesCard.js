@@ -1,9 +1,11 @@
 import React from "react";
+import emptyStar from "../images/starEMPTY.svg"
+import filledStar from "../images/starFILLED.svg"
 
 export default function FavoritesCard(props) {
   let starIcon = props.isFavorited
-    ? "https://www.freepnglogos.com/uploads/star-png/star-vector-png-transparent-image-pngpix-21.png"
-    : "https://img.uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/star-empty-icon.png";
+    ? filledStar
+    : emptyStar ;
 
   return (
     <div className="recipeCard">
