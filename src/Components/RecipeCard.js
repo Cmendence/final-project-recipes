@@ -25,7 +25,7 @@ export default function RecipeCard(props) {
       <span>{props.directions}</span>
       <h4>Ingredients:</h4>
       {props.ingredients.map((ingredient) => (
-        <p>{ingredient}</p>
+        <p>- {ingredient}</p>
       ))}
       <button className="btn--deleteRecipe" onClick={props.deleteRecipe}>
         Delete Recipe
